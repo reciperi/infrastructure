@@ -5,17 +5,14 @@ class profiles::common {
   # sshd config
   include profiles::ssh::server
 
-  # base firewall config
-  include profiles::firewall::setup
-
   # common packages needed everywhere
-  package {['vim', 'sudo', 'screen']:
+  package {['vim', 'sudo']:
     ensure => present
   }
 
   # set locale
   class { 'locales':
-    default_locale => 'en_GB.UTF-8',
-    locales        => ['en_GB.UTF-8 UTF-8']
+    default_locale => 'en_US.UTF-8',
+    locales        => ['en_US.UTF-8 UTF-8']
   }
 }
