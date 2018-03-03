@@ -2,6 +2,7 @@ VAGRANTFILE_API_VERSION = '2'.freeze
 INFRASTRUCTURE_REPO = '/home/infrastructure'.freeze
 HYPERVISOR = /linux/ =~ RUBY_PLATFORM ? :lxc : :virtualbox
 DEVENV_ROOT=File.expand_path(__dir__ + '/../../cache/repos/')
+ANSIBLE_DIR=File.expand_path(__dir__ + '/../../ansible/')
 
 subenvironment='devenv'
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|

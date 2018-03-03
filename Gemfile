@@ -6,11 +6,16 @@ gem 'capistrano', '3.10.1'
 gem 'capistrano-rake', '~> 0.1.0'
 
 # PUPPET
+gem 'puppet', '5.0'
 gem 'deep_merge', '1.1.1'
 gem 'facter', '= 2.4.6'
-gem 'puppet', '5.0'
+
+# Hiera
 gem 'hiera', '3.4.0'
 gem 'hiera-eyaml', '2.1.0'
+
+# manage puppet modules with Puppetfile
+gem 'r10k', '2.6.2 '
 
 # CLI
 gem 'thor', '~> 0.19.1'

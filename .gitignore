@@ -13,6 +13,9 @@ private_key.pkcs7.pem
 *.log
 .DS_Store
 
+# Puppet external
+puppet/modules
+
 # Cache
 !cache/tmp/.keepme
 !cache/bin/.keepme
