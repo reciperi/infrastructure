@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)"
+fi
+READLINK_CMD='readlink'
+if [ "$OS" = "OSX" ]; then
+  READLINK_CMD='greadlink'
+fi
+LINK=$(${READLINK_CMD} -f "${BASH_SOURCE[0]}")
+DIR="$( cd "$( dirname "${LINK}" )" && pwd )"
+cd ${DIR} || exit 1
+bundle exec ${DIR}/comander.rb "$@"

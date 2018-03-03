@@ -16,22 +16,13 @@ bundle exec bin/comander devenv start_servers
 
 Point your favorite browser to **http://dev.locb.xyx** and enjoy
 
-**NOTE:**
-
-Possibly you'll need to recreate the db, this is not done automatically.
-To do that, just issue
-
-```
-bundle exec bin/comander devenv exec_command 'cd /srv/app/current && bundle exec rake db:drop && bundle exec rake db:setup'
-```
-
 ## Installation
 
 The installation is simple, you just have to execute
 
 ```
 bundle install
-bundle exec bin/comander setup
+bin/comander setup
 ```
 
 This installs everything you need to start the virtual machine. After that
