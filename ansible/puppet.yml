@@ -1,0 +1,102 @@
+---
+- hosts: all
+  gather_facts: no
+  become: true
+  become_flags: '-E'
+  tasks:
+    - name: Apt update
+      changed_when: false
+      raw: apt-get update
+
+    - name: install python 2
+      changed_when: false
+      raw: test -e /usr/bin/python || (apt-get install -y python)
+
+    - name: 'Configuration'
+      include_vars:
+        file: 'vars/defaults.yml'
+
+    - setup:
+
+    - name: 'Install package dependencies'
+      apt:
+        pkg: "{{ item }}"
+        state: 'installed'
+      become: true
+      with_items:
+        - ruby2.3
+        - ruby2.3-dev
+        - build-essential
+        - ruby-augeas
+        - git
+
+    - name: 'Set Hostname'
+      command: "hostname {{set_hostname}}"
+      become: true
+
+    - copy:
+        content: "{{set_hostname}}"
+        dest: /etc/hostname
+        owner: root
+        group: root
+        mode: 0644
+      become: true
+
+    - name: 'Set up hosts'
+      template:
+        src: templates/etc/hosts.j2
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: 'Install gem bundler'
+      command: 'gem install bundler -v1.16.1'
+      args:
+        creates: '/usr/local/bin/bundler'
+      become: true
+
+    - name: 'Fetch code'
+      git:
+        repo: 'git@github.com:locbadge/infrastructure.git'
+        dest: "{{ infrastructure_path }}"
+        clone: yes
+        update: false
+        accept_hostkey: yes
+      become: false
+
+    - name: 'Copy keys'
+      copy:
+        src: '../puppet/keys/private_key.pkcs7.pem'
+        dest: "{{ infrastructure_path }}/puppet/keys/private_key.pkcs7.pem"
+        owner: root
+        group: root
+        mode: u=rw,g=r,o=r
+
+    - name: 'Check bundler'
+      shell: '/usr/local/bin/bundle check'
+      register: bundle_check
+      ignore_errors: yes
+      become: no
+      args:
+        chdir: "{{ infrastructure_path }}"
+
+    - name: 'Install gem Dependencies'
+      shell: '/usr/local/bin/bundler install'
+      changed_when: False
+      become: no
+      when: bundle_check|failed
+      args:
+        chdir: "{{ infrastructure_path }}"
+
+    - name: 'Apply puppet'
+      shell: "puppet apply environments/{{set_subenvironment}}/manifests/servers.pp --environment={{set_environment}} --confdir . --show_dif"
+      environment:
+        FACTER_SUBENVIRONMENT: "{{set_subenvironment}}"
+        FACTER_ROLE: "{{set_role}}"
+      changed_when: False
+      become: yes
+      args:
+        chdir: "{{ infrastructure_path }}/puppet"
+      register: puppet
+      when: apply_puppet
