@@ -1,8 +1,8 @@
 require_relative '../common/rails_app'
 
 # Config
-set :application, 'go-backend'
-set :repo_url, 'git@github.com:locbadge/go-backend.git'
+set :application, 'backend'
+set :repo_url, 'git@github.com:locbadge/backend.git'
 set :deploy_to, -> { fetch(ENV['APP_PATH'], '/srv/app') }
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', '.env')
 set :linked_dirs, fetch(:linked_dirs, []).push(

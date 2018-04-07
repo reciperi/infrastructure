@@ -1,5 +1,5 @@
 #!/bin/bash
-REPOS="go-backend:app"
+REPOS="backend:app"
 DEST_DIR=/srv/
 SUBDIR=/releases/devenv
 REPO_URL=git@github.com:locbadge

@@ -85,7 +85,6 @@
       shell: '/usr/local/bin/bundler install'
       changed_when: False
       become: no
-      when: bundle_check|failed
       args:
         chdir: "{{ infrastructure_path }}"
 
