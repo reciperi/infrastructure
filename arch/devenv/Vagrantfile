@@ -52,4 +52,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       apply_puppet: false
     }
   end
+  config.vm.provision 'puppet', type: 'shell', inline: "cd #{INFRASTRUCTURE_REPO}/puppet; FACTER_SUBENVIRONMENT=#{subenvironment} puppet apply environments/devenv/manifests/servers.pp --confdir . --environment=development --show_diff"
 end

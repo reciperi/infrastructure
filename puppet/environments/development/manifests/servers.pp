@@ -1,4 +1,4 @@
 #site.pp
-node 'default' {
+node develop {
   include role::webserver
 }

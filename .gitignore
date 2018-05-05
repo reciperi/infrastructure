@@ -2,6 +2,7 @@
 .vagrant
 .terraform
 *.retry
+.byebug_history
 
 # Secrets
 private_key.pkcs7.pem

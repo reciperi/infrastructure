@@ -16,6 +16,7 @@ GEM
       aws-sdk-core (= 2.11.8)
     aws-sigv4 (1.0.2)
     backports (3.11.1)
+    byebug (9.1.0)
     cabin (0.9.0)
     capistrano (3.10.1)
       airbrussh (>= 1.0.0)
@@ -154,6 +155,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.11)
+  byebug
   capistrano (= 3.10.1)
   capistrano-rake (~> 0.1.0)
   deb-s3 (= 0.9.1)

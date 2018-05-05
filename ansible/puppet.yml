@@ -92,7 +92,6 @@
       shell: "puppet apply environments/{{set_subenvironment}}/manifests/servers.pp --environment={{set_environment}} --confdir . --show_dif"
       environment:
         FACTER_SUBENVIRONMENT: "{{set_subenvironment}}"
-        FACTER_ROLE: "{{set_role}}"
       changed_when: False
       become: yes
       args:

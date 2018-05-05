@@ -19,7 +19,7 @@ module Locb
       desc 'provision', 'Provisions the devenv environment'
       def provision
         exec_command('sudo apt-get update')
-        invoke 'locb:c_l_i:base:vagrant', ['devenv', ['provision', '--provision-with', 'puppet']]
+        invoke 'locb:c_l_i:base:vagrant', ['devenv', ['provision']]
       end
 
       desc 'reload', 'Reloads the devenv environment'

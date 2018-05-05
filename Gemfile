@@ -30,6 +30,7 @@ gem 'rubyzip', '~> 1.2'
 group :development do
   gem 'bundler', '~> 1.11'
   gem 'rake', '~> 10.0'
+  gem 'byebug'
   gem 'rspec', '~> 3.5'
   gem 'puppet-lint', '2.3.0'
 end

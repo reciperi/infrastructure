@@ -1,4 +1,5 @@
 require 'thor'
+require 'byebug'
 require_relative '../locb'
 require_relative 'cli/constants'
 require_relative 'cli/setup'
