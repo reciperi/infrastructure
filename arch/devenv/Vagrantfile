@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.compatibility_mode = '2.0'
     ansible.extra_vars = {
       set_hostname: 'develop',
-      set_domain: 'dev.locb.xyz',
+      set_domain: 'dev.efood.me',
       set_environment: 'development',
       set_subenvironment: 'devenv',
       infrastructure_path: INFRASTRUCTURE_REPO,

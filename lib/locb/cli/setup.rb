@@ -35,7 +35,7 @@ module Locb
 
         def setup_hosts
           hosts = File.read('/etc/hosts')
-          description = '# DEVENV Managed by locB infrastructure'
+          description = '# DEVENV Managed by eFood infrastructure'
           entry = "#{DEVENV_IP} #{HOSTS}"
           return if (hosts.include?(description) && hosts.include?(entry))
           `echo '#{description}' | sudo tee -a /etc/hosts`

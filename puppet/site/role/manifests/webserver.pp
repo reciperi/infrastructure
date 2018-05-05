@@ -1,4 +1,7 @@
 class role::webserver {
-  # include profile::base
-  include profile::nginx
+  # Common tools (secondary)
+  include profile::base
+
+  # Important staff
+  include profile::server
 }

@@ -9,8 +9,10 @@ FORGE
     puppetlabs-concat (4.2.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
     puppetlabs-stdlib (4.25.1)
+    saz-vim (2.7.0)
 
 DEPENDENCIES
   puppet-nginx (= 0.11.0)
   puppetlabs-apt (= 4.5.1)
+  saz-vim (= 2.7.0)
 

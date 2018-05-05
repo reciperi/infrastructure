@@ -11,6 +11,6 @@ module Locb
       "#{INFRASTRUCTURE_BASE_DIR}/cache/bin"
     )
     DEVENV_IP = '10.0.4.3'.freeze
-    HOSTS = 'dev.locb.xyz'.freeze
+    HOSTS = 'dev.efood.me'.freeze
   end
 end
