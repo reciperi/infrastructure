@@ -88,18 +88,9 @@
       args:
         chdir: "{{ infrastructure_path }}"
 
-    - name: 'Check r10k'
-      shell: '/usr/local/bin/r10k puppetfile check'
-      register: r10k_check
-      ignore_errors: yes
-      become: no
-      args:
-        chdir: "{{ infrastructure_path }}/puppet"
-
     - name: 'Install puppet dependencies'
-      shell: '/usr/local/bin/r10k puppetfile install'
-      register: r10k_check
-      ignore_errors: yes
+      shell: '/usr/local/bin/librarian-puppet install --no-use-v1-api'
+      ignore_errors: no
       become: no
       args:
         chdir: "{{ infrastructure_path }}/puppet"

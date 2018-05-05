@@ -1,1 +1,10 @@
-mod 'puppetlabs/stdlib', '4.9.0'
+#!/usr/bin/env ruby
+#^syntax detection
+
+forge "https://forgeapi.puppetlabs.com"
+
+# use dependencies defined in metadata.json
+# metadata
+
+mod 'puppetlabs-apt', '4.5.1'
+mod 'puppet-nginx', '0.11.0'
