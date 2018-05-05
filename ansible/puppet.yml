@@ -88,6 +88,22 @@
       args:
         chdir: "{{ infrastructure_path }}"
 
+    - name: 'Check r10k'
+      shell: '/usr/local/bin/r10k puppetfile check'
+      register: r10k_check
+      ignore_errors: yes
+      become: no
+      args:
+        chdir: "{{ infrastructure_path }}/puppet"
+
+    - name: 'Install puppet dependencies'
+      shell: '/usr/local/bin/r10k puppetfile install'
+      register: r10k_check
+      ignore_errors: yes
+      become: no
+      args:
+        chdir: "{{ infrastructure_path }}/puppet"
+
     - name: 'Apply puppet'
       shell: "puppet apply environments/{{set_subenvironment}}/manifests/servers.pp --environment={{set_environment}} --confdir . --show_dif"
       environment:
