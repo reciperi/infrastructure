@@ -1,0 +1,28 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppet-nginx (0.11.0)
+      puppetlabs-concat (< 5.0.0, >= 3.0.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
+    puppetlabs-apt (4.5.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
+    puppetlabs-concat (4.2.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
+    puppetlabs-stdlib (4.25.1)
+    saz-vim (2.7.0)
+
+GIT
+  remote: git@github.com:locbadge/infrastructure.git
+  path: puppet/our_modules/elixir
+  ref: master
+  sha: c0f70052666f4abf5774bd306646f81c68f3335c
+  specs:
+    andresgutgon-elixir (0.1.0)
+      puppetlabs-apt (>= 1.0.0)
+
+DEPENDENCIES
+  andresgutgon-elixir (>= 0)
+  puppet-nginx (= 0.11.0)
+  puppetlabs-apt (= 4.5.1)
+  saz-vim (= 2.7.0)
+
