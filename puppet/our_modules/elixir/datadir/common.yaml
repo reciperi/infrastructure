@@ -1,2 +1,5 @@
 ---
-elixir::version: '1.1.0~0.20150708-1'
+elixir::erlang_repo_name: 'earlang-solutions'
+elixir::erlang_repo_location: 'http://packages.erlang-solutions.com/ubuntu'
+elixir::erlang_repo_key: '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA'
+elixir::elixir_version: '1.6.4-1'

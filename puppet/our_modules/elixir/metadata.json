@@ -9,7 +9,7 @@
   "issues_url": null,
   "dependencies": [
     {
-      "name": "puppetlabs-stdlib",
+      "name": "puppetlabs-apt",
       "version_requirement": ">= 1.0.0"
     }
   ]
