@@ -3,5 +3,6 @@ class role::webserver {
   include profile::base
 
   # Important staff
-  include profile::server
+  include profile::nginx
+  include profile::elixir
 }

@@ -12,3 +12,8 @@ mod 'saz-vim', '2.7.0'
 # Infrastructure
 mod 'puppetlabs-apt', '4.5.1'
 mod 'puppet-nginx', '0.11.0'
+mod(
+  'andresgutgon-elixir',
+  git: 'git@github.com:locbadge/infrastructure.git',
+  path: 'puppet/our_modules/elixir'
+)
