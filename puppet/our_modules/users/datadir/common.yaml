@@ -1,0 +1,31 @@
+dev_deployers: &dev_deployers
+  - andresgutgon
+
+dev_admins: &dev_admins
+  - andresgutgon
+
+lookup_options:
+  "users::user_info":
+    merge:
+      strategy: deep
+
+users::include_bash_interactive_files: []
+
+users::for_group::user_info: "%{alias('users::user_info')}"
+users::user_info:
+  'deploy':
+    puppet_options:
+      system: true
+    groups: ['deploy']
+    authorized_users: *dev_deployers
+  'ubuntu':
+    groups: ['ubuntu']
+    authorized_users: *dev_admins
+  'root':
+    groups: ['root']
+    authorized_users: *dev_admins
+    puppet_options:
+      home: '/root'
+  'vagrant':
+    groups: ['vagrant']
+    authorized_users: *dev_deployers

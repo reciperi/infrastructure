@@ -1,4 +1,4 @@
 #site.pp
-node 'testclient.olindata.vm' {
-  include role::webserver
+node /dummy/ {
+  notice(' Im a dummy node. Check environments folder')
 }

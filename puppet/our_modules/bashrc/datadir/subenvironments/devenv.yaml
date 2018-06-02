@@ -1,0 +1,2 @@
+bashrc::include_bash_interactive_files:
+  - /home/me/.bashrc_devenv

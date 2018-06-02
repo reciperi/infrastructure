@@ -1,0 +1,18 @@
+lookup_options:
+  "groups::group_info":
+    merge:
+      strategy: deep
+
+groups::group_info:
+  'deploy':
+    puppet_options:
+      system: true
+      ensure: 'present'
+  'ubuntu':
+    puppet_options:
+      system: false
+      ensure: 'present'
+  'root':
+    puppet_options:
+      system: true
+      ensure: 'present'

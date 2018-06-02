@@ -1,0 +1,5 @@
+groups::group_info:
+  'vagrant':
+    puppet_options:
+      system: false
+      ensure: 'present'

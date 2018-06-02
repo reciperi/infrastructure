@@ -1,3 +1,3 @@
-node 'develop' {
+node develop {
   include role::webserver
 }
