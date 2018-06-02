@@ -1,4 +1,4 @@
 #site.pp
 node 'develop' {
-  include role::webserver
+  include roles::www
 }
