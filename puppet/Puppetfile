@@ -16,6 +16,11 @@ mod(
   path: 'puppet/our_modules/elixir'
 )
 mod(
+  'andresgutgon-utils',
+  git: 'git@github.com:locbadge/infrastructure.git',
+  path: 'puppet/our_modules/utils'
+)
+mod(
   'andresgutgon-users',
   git: 'git@github.com:locbadge/infrastructure.git',
   path: 'puppet/our_modules/users'

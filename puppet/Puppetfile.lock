@@ -34,6 +34,14 @@ GIT
 
 GIT
   remote: git@github.com:locbadge/infrastructure.git
+  path: puppet/our_modules/project-utils
+  ref: master
+  sha: b079f2a2721438f3889c56a8ec0af312a6182802
+  specs:
+    andresgutgon-utils (0.0.1)
+
+GIT
+  remote: git@github.com:locbadge/infrastructure.git
   path: puppet/our_modules/users
   ref: master
   sha: ef341eaf791b5d390c588de93d6b883ff4d0a0cc
@@ -44,6 +52,7 @@ DEPENDENCIES
   andresgutgon-bashrc (>= 0)
   andresgutgon-elixir (>= 0)
   andresgutgon-users (>= 0)
+  andresgutgon-utils (>= 0)
   puppet-nginx (= 0.11.0)
   puppetlabs-apt (= 4.5.1)
   saz-timezone (= 4.1.1)
