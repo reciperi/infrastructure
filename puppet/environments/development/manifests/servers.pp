@@ -1,4 +1,4 @@
 #site.pp
-node 'develop' {
-  include roles::www
+node develop {
+  include web_role
 }

@@ -1,0 +1,16 @@
+---
+version: 5
+defaults:                       # Used for any hierarchy level that omits these keys.
+  datadir: datadir              # This path is relative to hiera.yaml's directory.
+  lookup_key: eyaml_lookup_key
+  options:
+    pkcs7_private_key: "keys/private_key.pkcs7.pem"
+    pkcs7_public_key:  "keys/public_key.pkcs7.pem"
+
+hierarchy:
+  - name: 'Sub environment'
+    path: "subenvironments/%{subenvironment}.yaml"
+  - name: 'Per environment conf'
+    path: "environments/%{environment}.yaml"
+  - name: 'common'
+    path: 'common.yaml'

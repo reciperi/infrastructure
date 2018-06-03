@@ -1,3 +1,3 @@
 node develop {
-  include role::web
+  include web_role
 }

@@ -34,19 +34,19 @@ GIT
 
 GIT
   remote: git@github.com:locbadge/infrastructure.git
-  path: puppet/our_modules/project-utils
-  ref: master
-  sha: b079f2a2721438f3889c56a8ec0af312a6182802
-  specs:
-    andresgutgon-utils (0.0.1)
-
-GIT
-  remote: git@github.com:locbadge/infrastructure.git
   path: puppet/our_modules/users
   ref: master
   sha: ef341eaf791b5d390c588de93d6b883ff4d0a0cc
   specs:
     andresgutgon-users (0.1.0)
+
+GIT
+  remote: git@github.com:locbadge/infrastructure.git
+  path: puppet/our_modules/utils
+  ref: master
+  sha: 400bb4b558c60e660e33399ae1b85d81cc7e2511
+  specs:
+    andresgutgon-utils (0.1.0)
 
 DEPENDENCIES
   andresgutgon-bashrc (>= 0)
