@@ -18,33 +18,33 @@ FORGE
 GIT
   remote: git@github.com:locbadge/infrastructure.git
   path: puppet/our_modules/bashrc
-  ref: master
-  sha: ef341eaf791b5d390c588de93d6b883ff4d0a0cc
+  ref: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
+  sha: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
   specs:
     andresgutgon-bashrc (0.0.1)
 
 GIT
   remote: git@github.com:locbadge/infrastructure.git
   path: puppet/our_modules/elixir
-  ref: master
-  sha: c0f70052666f4abf5774bd306646f81c68f3335c
+  ref: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
+  sha: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
   specs:
-    andresgutgon-elixir (0.1.0)
+    andresgutgon-elixir (0.1.1)
       puppetlabs-apt (>= 1.0.0)
 
 GIT
   remote: git@github.com:locbadge/infrastructure.git
   path: puppet/our_modules/users
-  ref: master
-  sha: ef341eaf791b5d390c588de93d6b883ff4d0a0cc
+  ref: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
+  sha: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
   specs:
     andresgutgon-users (0.1.0)
 
 GIT
   remote: git@github.com:locbadge/infrastructure.git
   path: puppet/our_modules/utils
-  ref: master
-  sha: 400bb4b558c60e660e33399ae1b85d81cc7e2511
+  ref: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
+  sha: ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3
   specs:
     andresgutgon-utils (0.1.0)
 
