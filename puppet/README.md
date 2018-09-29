@@ -1,6 +1,15 @@
 ## Puppet learnings
 Concepts about Puppet. Let here just to remember
 
+### Eyaml
+Eyaml is used to encript variables in hiera files. Your secrets. To add an encripted variable do this:
+
+```
+eyaml edit modules/<YOUR_MODULE>/datadir/environments/<ENVIRONMENT>.yaml
+```
+
+### Eyaml and encripting files
+Be aware that `eyaml` use OpenSSL under the hood. That means the version of openssl which the files are encripted must be the same when you read it.
 
 ### Puppet executed with sudo
 Note: when executing `puppet` with `sudo` it must be done with `-E` this way:

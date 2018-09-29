@@ -8,5 +8,6 @@ class backend_app_profile (
     manage_repo    => true,
     package_source => 'nginx-mainline'
   }
+  class { 'postgresql_server': }
   class { 'elixir': }
 }

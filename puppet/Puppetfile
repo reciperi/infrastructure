@@ -8,29 +8,11 @@ mod 'saz-vim', '2.7.0'
 mod 'puppetlabs-apt', '4.5.1'
 mod 'puppet-nginx', '0.11.0'
 mod 'saz-timezone', '4.1.1'
+mod 'puppetlabs-postgresql', '5.10.0'
 
 # Our modules
-mod(
-  'andresgutgon-elixir',
-  git: 'git@github.com:locbadge/infrastructure.git',
-  path: 'puppet/our_modules/elixir',
-  ref: 'ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3'
-)
-mod(
-  'andresgutgon-utils',
-  git: 'git@github.com:locbadge/infrastructure.git',
-  path: 'puppet/our_modules/utils',
-  ref: 'ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3'
-)
-mod(
-  'andresgutgon-users',
-  git: 'git@github.com:locbadge/infrastructure.git',
-  path: 'puppet/our_modules/users',
-  ref: 'ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3'
-)
-mod(
-  'andresgutgon-bashrc',
-  git: 'git@github.com:locbadge/infrastructure.git',
-  path: 'puppet/our_modules/bashrc',
-  ref: 'ca137252e6b2cd6b4f5853e9139ae70fa3da9ec3'
-)
+mod 'andresgutgon-elixir', path: './our_modules/elixir'
+mod 'andresgutgon-utils', path: './our_modules/utils'
+mod 'andresgutgon-users', path: './our_modules/users'
+mod 'andresgutgon-bashrc', path: './our_modules/bashrc'
+mod 'andresgutgon-postgresql', path: './our_modules/postgresql_server'

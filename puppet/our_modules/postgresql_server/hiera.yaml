@@ -8,7 +8,9 @@ defaults:
     pkcs7_public_key:  "keys/public_key.pkcs7.pem"
 
 hierarchy:
+  - name: 'Sub environment'
+    path: "subenvironments/%{subenvironment}.yaml"
   - name: 'Per environment conf'
-    path: "environments/%{environment}.yaml"
-  - name: 'common'
-    path: 'common.yaml'
+    paths:
+      - "environments/%{environment}.yaml"
+      - "common.yaml"
