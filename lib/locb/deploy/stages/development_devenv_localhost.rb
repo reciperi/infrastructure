@@ -5,14 +5,16 @@ require_relative 'development_localhost'
 # from github but is already mounted in the server (a shared folder from the host).
 # In such situation, we would like to perform the whole capistrano symlinking/compiling/etc
 # but we skip the part the code is downloaded
-server 'localhost',
+server(
+  'localhost',
   user: fetch(:user, 'vagrant'),
-  roles: %w{web app db},
+  roles: %w[web app db],
   ssh_options: {
     forward_agent: true,
-    auth_methods: %w(publickey),
+    auth_methods: %w[publickey],
     known_hosts: Net::SSH::KnownHosts
   }
+)
 
 set :substage, 'devenv'
 set :bundle_without, nil

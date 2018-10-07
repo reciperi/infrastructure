@@ -8,10 +8,10 @@ module Locb
         called_stage = fetch(:stage)
         set :stage, stage
         set :branch, ENV.fetch('BRANCH', 'master')
-        set :format_options, log_file: ENV.fetch('CAP_LOG_FILE', 'log/capistrano.log')
-
-        config = Locb::Release::Config.application(name: application)
-        set :repo_url, config.repo
+        set(
+          :format_options,
+          log_file: ENV.fetch('CAP_LOG_FILE', 'log/capistrano.log')
+        )
 
         # load specific configuration depending on the stage/application
         any_stage_config_file = "#{__dir__}/application/#{application}/common.rb"

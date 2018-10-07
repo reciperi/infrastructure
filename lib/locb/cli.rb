@@ -1,5 +1,4 @@
 require 'thor'
-require 'byebug'
 require_relative '../locb'
 require_relative 'cli/constants'
 require_relative 'cli/setup'
@@ -45,8 +44,18 @@ module Locb
       end
 
       desc 'deploy APP_NAME', 'Deploys APP_NAME into an environment'
-      method_option :to, aliases: '-t', default: 'staging', desc: 'The environment to deploy to'
-      method_option :branch, aliases: '-b', default: 'master', desc: 'The branch to deploy'
+      method_option(
+        :to,
+        aliases: '-t',
+        default: 'staging',
+        desc: 'The environment to deploy to'
+      )
+      method_option(
+        :branch,
+        aliases: '-b',
+        default: 'master',
+        desc: 'The branch to deploy'
+      )
       method_option :private_key, desc: 'Private key for connecting'
       def deploy(app_name)
         setup_agent!(options[:identity_file], options[:private_key])
@@ -56,8 +65,7 @@ module Locb
           .run!(
             options[:to],
             options[:branch],
-            'deploy',
-            capistrano_variables
+            'deploy'
           )
       end
 
@@ -69,8 +77,7 @@ module Locb
           .run!(
             options[:to],
             nil,
-            'deploy:rollback',
-            capistrano_variables
+            'deploy:rollback'
           )
       end
 
@@ -88,8 +95,7 @@ module Locb
           .run!(
             options[:environment],
             options[:branch],
-            options[:task],
-            capistrano_variables
+            options[:task]
           )
       end
 
@@ -105,17 +111,18 @@ module Locb
 
       desc 'vagrant ENVIRONMENT *COMMAND', 'Execs a vagrant command in a given environment', hide: true
       def vagrant(env, *command)
-        system("cd #{INFRASTRUCTURE_BASE_DIR}/arch/#{env} && vagrant #{command.join(' ')}")
+        system(
+          [
+            "cd #{INFRASTRUCTURE_BASE_DIR}/arch/#{env} &&",
+            "vagrant #{command.join(' ')}"
+          ].join(' ')
+        )
       end
 
       no_tasks do
         def ssh_extra_args
           bastion_host = "-o ControlPersist=15m  -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -o ProxyCommand=\"ssh -q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -A #{options[:user]}@#{options[:bastion_host]} -W %h:%p\"" if options[:bastion_host]
           "--ssh-extra-args='-A #{bastion_host}'"
-        end
-
-        def capistrano_variables
-          @variables ||= Infrastructure::Info.puppet_value('capistrano_variables')
         end
       end
     end

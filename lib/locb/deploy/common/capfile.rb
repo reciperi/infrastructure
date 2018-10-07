@@ -1,4 +1,4 @@
-require 'capistrano/consul'
+require 'capistrano/rake'
 require 'capistrano/setup'
 require 'capistrano/deploy'
 require 'capistrano/scm/git'
