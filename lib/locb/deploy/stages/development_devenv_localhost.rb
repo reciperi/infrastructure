@@ -38,5 +38,17 @@ end
 
 namespace :deploy do
   Rake::Task['set_previous_revision'].clear_actions
-  Rake::Task['restart'].clear_actions  # We do not restart in devenv
+  Rake::Task['restart'].clear_actions # We do not restart in devenv
+  # Fetch the repo if it does not exists
+  namespace :check do
+    desc 'Check shared and release directories exist'
+    task :directories do
+      on release_roles :all do
+        execute :mkdir, '-p', shared_path, releases_path, release_path
+        unless test "[ -d #{release_path}/.git ]"
+          execute :git, 'clone', fetch(:repo_url), release_path
+        end
+      end
+    end
+  end
 end
