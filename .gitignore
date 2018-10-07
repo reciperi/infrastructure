@@ -17,6 +17,7 @@ private_key.pkcs7.pem
 # Puppet external
 puppet/modules
 puppet/ssl
+*.swp
 
 # Cache
 !cache/tmp/.keepme

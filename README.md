@@ -11,8 +11,10 @@
 - [x] Fix new secrect key on config file on PostgreSQL
 - [x] Setup Ansible and Puppet in Linux
 - [x] Lxc container accessible on port 80. It was /etc/hosts wrong on my host machine
-- [ ] Setup env variables from puppet. Review [file_line](http://www.puppetmodule.info/github/simp/puppetlabs-stdlib/puppet_types/file_line) as a way to write from different Puppet modules into the same `.env` file
+- [x] Setup env variables from puppet. Review [file_line](http://www.puppetmodule.info/github/simp/puppetlabs-stdlib/puppet_types/file_line) as a way to write from different Puppet modules into the same `.env` file
+- [ ] Provision Phoenix Elixir package
 - [ ] Initialize Phoenix app.
+- [ ] How is deployed code on devenv? For what it's used development_devenv_localhost.rb?
 - [ ] Put Phoenix app under Nginx.
 - [ ] Review `capistrano-phoenix` gem
 - [ ] Implement ssl on devenv

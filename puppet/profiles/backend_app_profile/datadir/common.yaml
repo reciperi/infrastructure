@@ -1,2 +1,3 @@
+backend_app_profile::deploy_directory: '/srv/app'
 backend_app_profile::user: 'deploy'
 backend_app_profile::group: 'deploy'
