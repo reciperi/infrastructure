@@ -113,7 +113,7 @@ module Locb
       def vagrant(env, *command)
         system(
           [
-            "cd #{INFRASTRUCTURE_BASE_DIR}/arch/#{env} &&",
+            "cd #{INFRASTRUCTURE_BASE_DIR}/#{env} &&",
             "vagrant #{command.join(' ')}"
           ].join(' ')
         )

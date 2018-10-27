@@ -8,7 +8,7 @@ module Locb
 
       desc 'exec_command COMMAND', 'Runs a command inside the devenv environment'
       def exec_command(*command)
-        system("cd #{INFRASTRUCTURE_BASE_DIR}/arch/devenv && vagrant ssh develop -c '#{command.join(' ')}'")
+        system("cd #{INFRASTRUCTURE_BASE_DIR}/devenv && vagrant ssh develop -c '#{command.join(' ')}'")
       end
 
       desc 'ssh', 'Sshs into the devenv environment'

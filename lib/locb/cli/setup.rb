@@ -12,18 +12,20 @@ module Locb
 
       desc 'virtualbox', 'Installs virtualbox'
       def virtualbox
+        return if SYSTEM == 'linux'
         check_or_install('virtualbox')
       end
 
       desc 'ansible', 'Installs ansible, required for bootstraping'
       def ansible
-        check_or_install('ansible', false)
+        check_or_install('ansible')
       end
 
       desc 'all', 'Installs all dependencies'
       def all
         invoke 'vagrant'
         invoke 'virtualbox'
+        invoke 'ansible'
         fill_private_key
         setup_hosts
         say 'Done done!', :green
@@ -66,7 +68,7 @@ module Locb
           output
         end
 
-        def check_or_install(command, cask = true)
+        def check_or_install(command)
           return if which(command)
           if SYSTEM == 'linux'
             say "You need to install #{command}, after solving the issue run again this script"

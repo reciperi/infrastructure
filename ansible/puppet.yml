@@ -20,15 +20,14 @@
 
     - name: 'Install package dependencies'
       apt:
-        pkg: "{{ item }}"
-        state: 'installed'
+        pkg:
+          - ruby2.3
+          - ruby2.3-dev
+          - build-essential
+          - ruby-augeas
+          - git
+        state: 'present'
       become: true
-      with_items:
-        - ruby2.3
-        - ruby2.3-dev
-        - build-essential
-        - ruby-augeas
-        - git
 
     - name: 'Set Hostname'
       command: "hostname {{set_hostname}}"
@@ -94,14 +93,3 @@
       become: no
       args:
         chdir: "{{ infrastructure_path }}/puppet"
-
-    - name: 'Apply puppet'
-      shell: "puppet apply environments/{{set_subenvironment}}/manifests/servers.pp --environment={{set_environment}} --confdir . --show_dif"
-      environment:
-        FACTER_SUBENVIRONMENT: "{{set_subenvironment}}"
-      changed_when: False
-      become: yes
-      args:
-        chdir: "{{ infrastructure_path }}/puppet"
-      register: puppet
-      when: apply_puppet

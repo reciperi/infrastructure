@@ -16,6 +16,7 @@ private_key.pkcs7.pem
 
 # Puppet external
 puppet/modules
+puppet/ssl
 
 # Cache
 !cache/tmp/.keepme
@@ -23,4 +24,4 @@ puppet/modules
 !cache/repos/.keepme
 cache/bin/*
 cache/repos/*
-arch/devenv/home
+devenv/home

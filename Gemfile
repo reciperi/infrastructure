@@ -22,12 +22,6 @@ gem 'librarian-puppet', '3.0.0'
 gem 'thor', '~> 0.19.1'
 gem 'tmuxinator', '~> 0.7.1'
 
-# PACKAGES
-# TODO: review if needed
-gem 'deb-s3', '= 0.9.1'
-gem 'fpm', '=1.8.1'
-gem 'rubyzip', '~> 1.2'
-
 group :development do
   gem 'bundler', '~> 1.11'
   gem 'byebug'
