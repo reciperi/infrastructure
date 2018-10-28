@@ -9,8 +9,8 @@
 - [x] Ansible provision in Linux
 - [x] Puppet provision in Linux
 - [x] Fix new secrect key on config file on PostgreSQL
-- [ ] Setup Ansible and Puppet in Linux
-
+- [x] Setup Ansible and Puppet in Linux
+- [x] Lxc container accessible on port 80. It was /etc/hosts wrong on my host machine
 - [ ] Setup env variables from puppet. Review [file_line](http://www.puppetmodule.info/github/simp/puppetlabs-stdlib/puppet_types/file_line) as a way to write from different Puppet modules into the same `.env` file
 - [ ] Initialize Phoenix app.
 - [ ] Put Phoenix app under Nginx.

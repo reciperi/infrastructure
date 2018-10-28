@@ -1,7 +1,7 @@
 Locb::CapistranoUtils.configure!
 
 server(
-  'dev.locb.xyz',
+  'dev.saltynpepper.com',
   user: fetch(:user, 'deploy'),
   roles: %w[web app db],
   ssh_options: {

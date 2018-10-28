@@ -27,7 +27,12 @@ module Locb
       method_option(:env, aliases: '-e', default: 'staging', desc: 'The environment of the server')
       method_option(:subenv, aliases: '-s', desc: 'The subenvironment of the server')
       method_option(:hostname, aliases: '-h', desc: 'The target hostname (will be set)')
-      method_option(:domain, aliases: '-d', default: 'locb.xyz', desc: 'The target domain (will be set)')
+      method_option(
+        :domain,
+        aliases: '-d',
+        default: 'saltynpepper.com',
+        desc: 'The target domain (will be set)'
+      )
       method_option(:user, aliases: '-u', default: 'ubuntu', desc:  'The user used to connect')
       method_option(:bastion_host, aliases: '-b', desc: 'A bastion host to use to get into the server')
       method_option(:ask_password, aliases: '-k', default: false, type: :boolean, desc: 'Ask for password')

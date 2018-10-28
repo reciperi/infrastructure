@@ -10,7 +10,7 @@ module Locb
     BIN_CACHE_DIRECTORY = File.expand_path(
       "#{INFRASTRUCTURE_BASE_DIR}/cache/bin"
     )
-    DEVENV_IP = '10.0.4.3'.freeze
-    HOSTS = 'dev.efood.me'.freeze
+    DEVENV_IP = '10.0.3.5'.freeze
+    HOSTS = 'dev.saltynpepper.com'.freeze
   end
 end
