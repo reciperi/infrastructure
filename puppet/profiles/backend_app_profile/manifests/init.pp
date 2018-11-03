@@ -6,8 +6,10 @@ class backend_app_profile (
 ) {
   require "users::${user}"
   class { 'postgresql_server': }
-  class { 'elixir': }
-  class{'nginx':
+  class { 'elixir':
+    user => $user
+  }
+  class {'nginx':
     manage_repo    => true,
     package_source => 'nginx-mainline'
   }

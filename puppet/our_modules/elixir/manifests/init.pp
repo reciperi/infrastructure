@@ -1,26 +1,31 @@
 # Elixir versions on Ubuntu can be found here:
 # https://www.erlang-solutions.com/resources/download.html
 #
-class elixir (
-  $erlang_repo_name,
-  $erlang_repo_location,
-  $erlang_repo_key,
-  $elixir_version
-) {
+class elixir ($user) {
   include ::apt
+
+  $erlang_repo_name = 'earlang-solutions'
   apt::source { $erlang_repo_name:
-    location => $erlang_repo_location,
+    location => 'http://packages.erlang-solutions.com/ubuntu',
     repos    => 'contrib',
     key      => {
-      'id' => $erlang_repo_key
+      'id' => '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA'
     }
   }
-  -> Class['apt::update']
+
+  Class['apt::update']
   -> package { 'esl-erlang':
-      ensure  => 'latest',
-      require => Apt::Source[$erlang_repo_name]
-  } -> package { 'elixir':
-    ensure  => $elixir_version,
+    ensure  => 'latest',
     require => Apt::Source[$erlang_repo_name]
   }
+  -> package { 'elixir':
+    ensure  => '1.7.3-1',
+    require => Apt::Source[$erlang_repo_name]
+  }
+  -> class { "${module_name}::phoenix":
+    version => '1.4.0',
+    user    => $user
+  }
+
+  contain("${module_name}::phoenix")
 }
