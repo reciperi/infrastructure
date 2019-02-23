@@ -1,6 +1,6 @@
 require 'open-uri'
 
-module Locb
+module Comander
   module CLI
     class Setup < Thor
       SYSTEM = /darwin/ =~ RUBY_PLATFORM ? 'darwin' : 'linux'

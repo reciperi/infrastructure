@@ -14,7 +14,7 @@ bundle exec bin/comander devenv up
 bundle exec bin/comander devenv start_servers
 ```
 
-Point your favorite browser to **http://dev.locb.xyx** and enjoy
+Point your favorite browser to **http://dev.reciperi.com** and enjoy
 
 ## Installation
 

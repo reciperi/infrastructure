@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require_relative '../lib/locb/cli'
+require_relative '../lib/comander/cli'
 
-Locb::CLI::Base.start(ARGV)
+Comander::CLI::Base.start(ARGV)

@@ -1,4 +1,4 @@
-module Locb
+module Comander
   module CLI
     INFRASTRUCTURE_BASE_DIR = File.expand_path("#{__dir__}/../../../")
     PUPPET_PATH = File.expand_path("#{INFRASTRUCTURE_BASE_DIR}/puppet")

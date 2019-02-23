@@ -1,4 +1,4 @@
-Locb::CapistranoUtils.configure!
+Comander::CapistranoUtils.configure!
 
 server 'staging.reciperi.com',
   user: fetch(:user, 'deploy'),

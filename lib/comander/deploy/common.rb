@@ -1,6 +1,6 @@
 require 'socket'
 
-module Locb
+module Comander
   class CapistranoUtils
     class <<self
       def configure!(application: fetch(:application), stage: fetch(:stage))

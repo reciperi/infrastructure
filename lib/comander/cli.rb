@@ -1,17 +1,17 @@
 require 'thor'
-require_relative '../locb'
+require_relative '../comander'
 require_relative 'cli/constants'
 require_relative 'cli/setup'
 require_relative 'cli/devenv'
 require_relative 'cli/utils'
 
 def ansible_playbooks
-  Dir.glob("#{Locb::CLI::ANSIBLE_PATH}/*yml").map do |i|
+  Dir.glob("#{Comander::CLI::ANSIBLE_PATH}/*yml").map do |i|
     i.split('/').last.split('.').first
   end
 end
 
-module Locb
+module Comander
   module CLI
     class Base < Thor
       register(
@@ -65,7 +65,7 @@ module Locb
       def deploy(app_name)
         setup_agent!(options[:identity_file], options[:private_key])
         check_ssh_agent!
-        Locb::Deploy
+        Comander::Deploy
           .new(application: app_name)
           .run!(
             options[:to],
@@ -77,7 +77,7 @@ module Locb
       desc 'rollback APP_NAME', 'Rolls back APP_NAME'
       method_option :to, aliases: '-t', default: 'staging', desc: 'The environment to deploy to'
       def rollback(app_name)
-        Locb::Deploy
+        Comander::Deploy
           .new(application: app_name)
           .run!(
             options[:to],
@@ -95,7 +95,7 @@ module Locb
       def capistrano(app_name, *command)
         setup_agent!(options[:identity_file], options[:private_key])
         check_ssh_agent!
-        Locb::Deploy
+        Comander::Deploy
           .new(application: app_name)
           .run!(
             options[:environment],

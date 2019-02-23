@@ -1,4 +1,4 @@
-Locb::CapistranoUtils.configure!(stage: 'production')
+Comander::CapistranoUtils.configure!(stage: 'production')
 
 server 'localhost',
   user: fetch(:user, ENV.fetch('CAP_USER', 'deploy')),

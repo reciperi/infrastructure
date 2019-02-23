@@ -1,7 +1,7 @@
 # TODO: implement production deploy
 GATEWAY_HOST = 'gateway.example.com'.freeze
 
-Locb::CapistranoUtils.configure!
+Comander::CapistranoUtils.configure!
 
 set(
   :ssh_options,

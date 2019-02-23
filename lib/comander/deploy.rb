@@ -1,9 +1,9 @@
 require 'open3'
 require 'capistrano/all'
-require_relative '../locb'
+require_relative '../comander'
 require_relative 'deploy/common'
 
-module Locb
+module Comander
   # This class is to encapsulate capistrano logic
   # is intended to be used to deploy applications programatically
   class Deploy
@@ -13,7 +13,7 @@ module Locb
     #
     # @param [Hash] options
     # @option options :application The application to be deployes
-    # @return and instance of Locb::Deploy
+    # @return and instance of Comander::Deploy
     def initialize(options)
       @options = options
       add_capistrano_extensions!

@@ -1,7 +1,7 @@
-Locb::CapistranoUtils.configure!(stage: 'development')
+Comander::CapistranoUtils.configure!
 
 server(
-  'localhost',
+  'dev.reciperi.com',
   user: fetch(:user, 'deploy'),
   roles: %w[web app db],
   ssh_options: {
@@ -11,6 +11,4 @@ server(
   }
 )
 
-set :stage, 'development'
 set :bundle_without, nil
-set :format_options, log_file: ENV.fetch('CAP_LOG_FILE', 'log/capistrano.log')

@@ -1,4 +1,4 @@
-require_relative '../lib/locb/cli/constants.rb'
+require_relative '../lib/comander/cli/constants.rb'
 
 VAGRANTFILE_API_VERSION = '2'.freeze
 INFRASTRUCTURE_REPO = '/home/infrastructure'.freeze
@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if HYPERVISOR == :virtualbox
     config.vm.define 'develop' do |vm_config|
       vm_config.vm.box = 'boxesio/xenial64-standard'
-      vm_config.vm.network :private_network, ip: Locb::CLI::DEVENV_IP
+      vm_config.vm.network :private_network, ip: Comander::CLI::DEVENV_IP
       vm_config.vm.provider 'virtualbox' do |v|
         v.memory = 3000
         v.cpus = 2
