@@ -8,7 +8,7 @@ FORGE
       puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
     puppetlabs-concat (4.2.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
-    puppetlabs-postgresql (5.10.0)
+    puppetlabs-postgresql (5.12.1)
       puppetlabs-apt (< 7.0.0, >= 2.0.0)
       puppetlabs-concat (< 6.0.0, >= 1.1.0)
       puppetlabs-stdlib (< 6.0.0, >= 4.13.1)
@@ -54,7 +54,7 @@ DEPENDENCIES
   andresgutgon-utils (>= 0)
   puppet-nginx (= 0.11.0)
   puppetlabs-apt (= 4.5.1)
-  puppetlabs-postgresql (= 5.10.0)
+  puppetlabs-postgresql (= 5.12.1)
   saz-timezone (= 4.1.1)
   saz-vim (= 2.7.0)
 

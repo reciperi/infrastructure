@@ -8,7 +8,7 @@ mod 'saz-vim', '2.7.0'
 mod 'puppetlabs-apt', '4.5.1'
 mod 'puppet-nginx', '0.11.0'
 mod 'saz-timezone', '4.1.1'
-mod 'puppetlabs-postgresql', '5.10.0'
+mod 'puppetlabs-postgresql', '5.12.1'
 
 # Our modules
 mod 'andresgutgon-elixir', path: './our_modules/elixir'
