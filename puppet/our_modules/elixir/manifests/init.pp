@@ -19,11 +19,11 @@ class elixir ($user) {
     require => Apt::Source[$erlang_repo_name]
   }
   -> package { 'elixir':
-    ensure  => '1.7.3-1',
+    ensure  => '1.8.1-2',
     require => Apt::Source[$erlang_repo_name]
   }
   -> class { "${module_name}::phoenix":
-    version => '1.4.0',
+    version => '1.4.1',
     user    => $user
   }
 

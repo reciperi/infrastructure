@@ -30,7 +30,7 @@ module Locb
       method_option(
         :domain,
         aliases: '-d',
-        default: 'saltynpepper.com',
+        default: 'reciperi.com',
         desc: 'The target domain (will be set)'
       )
       method_option(:user, aliases: '-u', default: 'ubuntu', desc:  'The user used to connect')

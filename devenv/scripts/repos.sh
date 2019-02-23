@@ -2,7 +2,7 @@
 REPOS="backend:app"
 DEST_DIR=/srv/
 SUBDIR=/releases/devenv
-REPO_URL=git@github.com:saltynpepper
+REPO_URL=git@github.com:reciperi
 
 # Install git
 stat /usr/bin/git > /dev/null || sudo apt-get install git

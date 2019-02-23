@@ -57,7 +57,7 @@
 
     - name: 'Fetch code'
       git:
-        repo: 'git@github.com:saltynpepper/infrastructure.git'
+        repo: 'git@github.com:reciperi/infrastructure.git'
         dest: "{{ infrastructure_path }}"
         clone: yes
         update: false

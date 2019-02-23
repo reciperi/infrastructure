@@ -94,15 +94,15 @@ Commands:
 In order to work with applications you need to mount the code in your box. In MaxOSX that is:
 
 ```
-sudo mount -t nfs  -o noowners,soft,vers=3,resvport dev.saltynpepper.com:/srv/app/releases/devenv/       APP_DEST_DIR
-sudo mount -t nfs  -o noowners,soft,vers=3,resvport dev.saltynpepper.com:                                HOME_DIR
+sudo mount -t nfs  -o noowners,soft,vers=3,resvport dev.reciperi.com:/srv/app/releases/devenv/       APP_DEST_DIR
+sudo mount -t nfs  -o noowners,soft,vers=3,resvport dev.reciperi.com:                                HOME_DIR
 ```
 
 In Linux
 ```
-sudo mount -o nfsvers=3 dev.locb.xyx:/srv/frontend/releases/devenv     FRONTEND_DEST_DIR
-sudo mount -o nfsvers=3 dev.locb.xyx:/srv/app/releases/devenv          BACKEND_DEST_DIR
-sudo mount -o nfsvers=3 dev.locb.xyx:/srv/wordpress/releases/devenv    WORDPRESS_DEST_DIR
-sudo mount -o nfsvers=3 dev.locb.xyx:                                  HOME_DIR
+sudo mount -o nfsvers=3 dev.reciperi.com:/srv/frontend/releases/devenv     FRONTEND_DEST_DIR
+sudo mount -o nfsvers=3 dev.reciperi.com:/srv/app/releases/devenv          BACKEND_DEST_DIR
+sudo mount -o nfsvers=3 dev.reciperi.com:/srv/wordpress/releases/devenv    WORDPRESS_DEST_DIR
+sudo mount -o nfsvers=3 dev.reciperi.com:                                  HOME_DIR
 
 ```

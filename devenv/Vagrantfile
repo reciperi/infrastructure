@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.define 'develop' do |node|
       node.vm.box = 'magec/xenial64-lxc'
       node.vm.provider :lxc do |lxc, _override_node_config|
-        lxc.container_name = 'saltynpepper-development'
+        lxc.container_name = 'reciperi-development'
         # This way of configure a container is valid in LXC > 3
         # In previou version it was something like: `lxc.customize 'network.ipv4', 'IP_HERE'`
         lxc.customize 'net.0.ipv4.address', '10.0.3.5/24'
@@ -53,7 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.compatibility_mode = '2.0'
     ansible.extra_vars = {
       set_hostname: 'develop',
-      set_domain: 'dev.saltynpepper.com',
+      set_domain: 'dev.reciperi.com',
       set_environment: 'development',
       set_subenvironment: 'devenv',
       infrastructure_path: INFRASTRUCTURE_REPO
