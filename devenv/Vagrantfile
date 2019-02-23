@@ -1,3 +1,5 @@
+require_relative '../lib/locb/cli/constants.rb'
+
 VAGRANTFILE_API_VERSION = '2'.freeze
 INFRASTRUCTURE_REPO = '/home/infrastructure'.freeze
 HYPERVISOR = /linux/ =~ RUBY_PLATFORM ? :lxc : :virtualbox
@@ -14,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if HYPERVISOR == :virtualbox
     config.vm.define 'develop' do |vm_config|
       vm_config.vm.box = 'boxesio/xenial64-standard'
-      vm_config.vm.network :private_network, ip: '10.0.4.3'
+      vm_config.vm.network :private_network, ip: Locb::CLI::DEVENV_IP
       vm_config.vm.provider 'virtualbox' do |v|
         v.memory = 3000
         v.cpus = 2
@@ -40,6 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     path: "#{SCRIPTS_DIR}/missing_packages.sh",
     privileged: false
   )
+
   # Fetch repos
   config.vm.provision(
     'fetch_repos',
@@ -47,6 +50,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     path: "#{SCRIPTS_DIR}/repos.sh",
     privileged: false
   )
+
   config.vm.provision 'bootstrap', type: 'ansible' do |ansible|
     ansible.playbook = "#{ANSIBLE_DIR}/puppet.yml"
     ansible.config_file = "#{ANSIBLE_DIR}/ansible.cfg"
