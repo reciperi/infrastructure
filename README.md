@@ -13,11 +13,11 @@
 - [x] Lxc container accessible on port 80. It was /etc/hosts wrong on my host machine
 - [x] Setup env variables from puppet. Review [file_line](http://www.puppetmodule.info/github/simp/puppetlabs-stdlib/puppet_types/file_line) as a way to write from different Puppet modules into the same `.env` file
 - [x] Provision Phoenix installer with mix package manager (Hex)
-- [ ] Copy from F!: How is deployed code on devenv? For what it's used development_devenv_localhost.rb?
-- [ ] Initialize Phoenix app.
-- [ ] Put Phoenix app under Nginx.
-- [ ] Review `capistrano-phoenix` gem
+- [x] Initialize Phoenix app.
+- [ ] Put Phoenix app under Nginx. Provision
 - [ ] Implement ssl on devenv
+- [ ] Copy from F!: How is deployed code on devenv? For what it's used development_devenv_localhost.rb?
+- [ ] Review `capistrano-phoenix` gem
 
 
 ### Resources for deploy Elixir apps

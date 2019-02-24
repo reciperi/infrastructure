@@ -1,0 +1,17 @@
+---
+version: 5
+defaults:
+  datadir: datadir              # This path is relative to hiera.yaml's directory.
+  lookup_key: eyaml_lookup_key
+  options:
+    pkcs7_private_key: "keys/private_key.pkcs7.pem"
+    pkcs7_public_key:  "keys/public_key.pkcs7.pem"
+
+hierarchy:
+  - name: 'Per environment conf'
+    path: "environments/%{environment}.yaml"
+    options:
+      pkcs7_private_key: "keys/%{environment}/private_key.pkcs7.pem"
+      pkcs7_public_key:  "keys/%{environment}/public_key.pkcs7.pem"
+  - name: 'common'
+    path: 'common.yaml'

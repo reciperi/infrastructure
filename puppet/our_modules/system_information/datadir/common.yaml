@@ -1,0 +1,4 @@
+system_information::domain_name: 'reciperi'
+system_information::tld: 'com'
+system_information::use_ssl: false
+system_information::subdomain_separator: '-'

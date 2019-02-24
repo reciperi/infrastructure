@@ -56,7 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.config_file = "#{ANSIBLE_DIR}/ansible.cfg"
     ansible.compatibility_mode = '2.0'
     ansible.extra_vars = {
-      set_hostname: 'develop',
+      set_hostname: 'dev',
       set_domain: 'dev.reciperi.com',
       set_environment: 'development',
       set_subenvironment: 'devenv',

@@ -1,9 +1,9 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    puppet-nginx (0.11.0)
-      puppetlabs-concat (< 5.0.0, >= 3.0.0)
-      puppetlabs-stdlib (< 5.0.0, >= 4.13.1)
+    puppet-nginx (0.15.0)
+      puppetlabs-concat (< 6.0.0, >= 3.0.0)
+      puppetlabs-stdlib (< 6.0.0, >= 4.22.0)
     puppetlabs-apt (4.5.1)
       puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
     puppetlabs-concat (4.2.1)
@@ -25,16 +25,21 @@ PATH
     andresgutgon-bashrc (0.0.1)
 
 PATH
+  remote: ./our_modules/database
+  specs:
+    andresgutgon-database (0.0.1)
+      puppetlabs-apt (>= 1.0.0)
+
+PATH
   remote: ./our_modules/elixir
   specs:
     andresgutgon-elixir (0.1.1)
       puppetlabs-apt (>= 1.0.0)
 
 PATH
-  remote: ./our_modules/postgresql_server
+  remote: ./our_modules/system_information
   specs:
-    andresgutgon-postgresql (0.0.1)
-      puppetlabs-apt (>= 1.0.0)
+    andresgutgon-system_information (0.1.0)
 
 PATH
   remote: ./our_modules/users
@@ -48,11 +53,12 @@ PATH
 
 DEPENDENCIES
   andresgutgon-bashrc (>= 0)
+  andresgutgon-database (>= 0)
   andresgutgon-elixir (>= 0)
-  andresgutgon-postgresql (>= 0)
+  andresgutgon-system_information (>= 0)
   andresgutgon-users (>= 0)
   andresgutgon-utils (>= 0)
-  puppet-nginx (= 0.11.0)
+  puppet-nginx (= 0.15.0)
   puppetlabs-apt (= 4.5.1)
   puppetlabs-postgresql (= 5.12.1)
   saz-timezone (= 4.1.1)

@@ -4,14 +4,15 @@ class backend_app_profile (
   $user,
   $group,
 ) {
+  require system_information
   require "users::${user}"
-  class { 'postgresql_server': }
+  class { 'database': }
   class { 'elixir':
     user => $user
   }
-  class {'nginx':
-    manage_repo    => true,
-    package_source => 'nginx-mainline'
+  class { "${module_name}::webserver":
+    upstream_port => $system_information::roles['api']['upstream_port'],
+    server_name   => $system_information::roles['api']['server_name'],
   }
 
   $directories = [

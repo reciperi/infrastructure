@@ -1,11 +1,11 @@
 # This puppet package is used here
 # https://forge.puppet.com/puppetlabs/postgresql
 #
-class postgresql_server (
+class database (
   $db_username,
   $db_password,
 ) {
-  utils::env_vars {'postgresql_env_vars':
+  utils::env_vars {'database_env_vars':
     module   => 'backend',
     lines => {
       db_username => $db_username,
