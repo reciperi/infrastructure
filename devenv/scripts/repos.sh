@@ -1,5 +1,5 @@
 #!/bin/bash
-REPOS="backend:app"
+REPOS="api:app"
 DEST_DIR=/srv/
 SUBDIR=/releases/devenv
 REPO_URL=git@github.com:reciperi

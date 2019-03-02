@@ -11,9 +11,11 @@ mod 'saz-timezone', '4.1.1'
 mod 'puppetlabs-postgresql', '5.12.1'
 
 # Our modules
+mod 'andresgutgon-packages', path: './our_modules/packages'
 mod 'andresgutgon-system_information', path: './our_modules/system_information'
 mod 'andresgutgon-elixir', path: './our_modules/elixir'
 mod 'andresgutgon-utils', path: './our_modules/utils'
 mod 'andresgutgon-users', path: './our_modules/users'
 mod 'andresgutgon-bashrc', path: './our_modules/bashrc'
+mod 'andresgutgon-bashrc', path: './our_modules/comander'
 mod 'andresgutgon-database', path: './our_modules/database'

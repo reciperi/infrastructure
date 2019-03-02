@@ -1,6 +1,6 @@
 # Config
-set :application, 'backend'
-set :repo_url, 'git@github.com:reciperi/backend.git'
+set :application, 'api'
+set :repo_url, 'git@github.com:reciperi/api.git'
 set :deploy_to, -> { fetch(ENV['APP_PATH'], '/srv/app') }
 set :linked_files, fetch(:linked_files, []).push('.env')
 

@@ -12,8 +12,8 @@ class system_information (
 
     $http_protocol = $use_ssl ? {
       true  => 'https',
-    false => 'http',
-  }
+      false => 'http'
+    }
 
   $roles = {
     'api' => {

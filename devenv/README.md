@@ -101,7 +101,7 @@ sudo mount -t nfs  -o noowners,soft,vers=3,resvport dev.reciperi.com:           
 In Linux
 ```
 sudo mount -o nfsvers=3 dev.reciperi.com:/srv/frontend/releases/devenv     FRONTEND_DEST_DIR
-sudo mount -o nfsvers=3 dev.reciperi.com:/srv/app/releases/devenv          BACKEND_DEST_DIR
+sudo mount -o nfsvers=3 dev.reciperi.com:/srv/app/releases/devenv          API_DEST_DIR
 sudo mount -o nfsvers=3 dev.reciperi.com:/srv/wordpress/releases/devenv    WORDPRESS_DEST_DIR
 sudo mount -o nfsvers=3 dev.reciperi.com:                                  HOME_DIR
 

@@ -1,0 +1,4 @@
+api_profile::deploy_directory: '/srv/app'
+api_profile::user: 'deploy'
+api_profile::group: 'deploy'
+api_profile::branch: 'master'

@@ -1,5 +1,24 @@
 ### TODO
+- [ ] Setup [absinthe](https://github.com/absinthe-graphql/absinthe) as GraphQL server
+- [ ] Do some seed data
+- [ ] Play with Graphicl
+- [ ] Implement ssl on devenv
+- [ ] Review `capistrano-phoenix` gem
 
+### Resources for deploy Elixir apps
+- [6 months with Elixir and Phoenix](https://medium.com/@elviovicosa/i-have-been-using-ruby-rails-for-8-years-and-although-ive-used-different-technologies-over-that-4a4933dae3e5)
+
+- [Capistrano Phoenix](https://github.com/dabit/capistrano-phoenix) as a deploy strategy
+
+### Translation of columns
+https://github.com/crbelaus/trans
+
+### Certificate
+https://dennisreimann.de/articles/phoenix-nginx-config.html
+https://www.digitalocean.com/community/tutorials/how-to-set-up-let-s-encrypt-with-nginx-server-blocks-on-ubuntu-16-04
+https://forge.puppet.com/puppet/letsencrypt
+
+### DONE
 - [x] Hiera don't take `subenvironment` as `FACTER_SUBENVIRONMENT` in command line
 - [x] Talk with Jose what modules are basic for implement it. Ex.: ssh, groups, ?
 - [x] PostgreSQL puppet module. Decript error run provision
@@ -14,13 +33,6 @@
 - [x] Setup env variables from puppet. Review [file_line](http://www.puppetmodule.info/github/simp/puppetlabs-stdlib/puppet_types/file_line) as a way to write from different Puppet modules into the same `.env` file
 - [x] Provision Phoenix installer with mix package manager (Hex)
 - [x] Initialize Phoenix app.
-- [ ] Put Phoenix app under Nginx. Provision
-- [ ] Implement ssl on devenv
-- [ ] Copy from F!: How is deployed code on devenv? For what it's used development_devenv_localhost.rb?
-- [ ] Review `capistrano-phoenix` gem
-
-
-### Resources for deploy Elixir apps
-- [6 months with Elixir and Phoenix](https://medium.com/@elviovicosa/i-have-been-using-ruby-rails-for-8-years-and-although-ive-used-different-technologies-over-that-4a4933dae3e5)
-
-- [Capistrano Phoenix](https://github.com/dabit/capistrano-phoenix) as a deploy strategy
+- [x] Put Phoenix app under Nginx. Provision
+- [x] Do an Ecto table for recipes (Just a field for `name`)
+- [x] Copy from F!: How is deployed code on devenv? For what it's used development_devenv_localhost.rb?

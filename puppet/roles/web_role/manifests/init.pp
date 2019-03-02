@@ -1,3 +1,3 @@
 class web_role inherits base_role {
-  include backend_app_profile
+  include api_profile
 }

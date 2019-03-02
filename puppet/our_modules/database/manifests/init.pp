@@ -6,7 +6,7 @@ class database (
   $db_password,
 ) {
   utils::env_vars {'database_env_vars':
-    module   => 'backend',
+    module   => 'api',
     lines => {
       db_username => $db_username,
       db_password => $db_password

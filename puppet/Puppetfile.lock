@@ -20,9 +20,10 @@ FORGE
     stm-debconf (2.2.0)
 
 PATH
-  remote: ./our_modules/bashrc
+  remote: ./our_modules/comander
   specs:
     andresgutgon-bashrc (0.0.1)
+      puppetlabs-apt (>= 1.0.0)
 
 PATH
   remote: ./our_modules/database
