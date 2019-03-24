@@ -1,7 +1,10 @@
 ### TODO
-- [ ] Setup [absinthe](https://github.com/absinthe-graphql/absinthe) as GraphQL server
+- [ ] Migrate from umbrella to monolithic on backend
+- [ ] What do I want for a pre-ALPHA in data layer? Maybe just an app that list/create/update ingredients
+- [ ] Investigate what are attributes interesting for ingredient
+- [ ] JSON Web Token for API authentication
 - [ ] Do some seed data
-- [ ] Play with Graphicl
+
 - [ ] Implement ssl on devenv
 - [ ] Review `capistrano-phoenix` gem
 
@@ -36,3 +39,6 @@ https://forge.puppet.com/puppet/letsencrypt
 - [x] Put Phoenix app under Nginx. Provision
 - [x] Do an Ecto table for recipes (Just a field for `name`)
 - [x] Copy from F!: How is deployed code on devenv? For what it's used development_devenv_localhost.rb?
+- [x] Setup [absinthe](https://github.com/absinthe-graphql/absinthe) as GraphQL server
+- [x] Play with Graphicl
+- [x] ~Translate with `trans`?~ Each locale will have the ingridients list. It's too complicated to join the same ingredient across locales if we want clients create ingredients. Although we should have a lot ingredients created before go public.
