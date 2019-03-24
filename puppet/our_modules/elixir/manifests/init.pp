@@ -23,7 +23,7 @@ class elixir ($user) {
     require => Apt::Source[$erlang_repo_name]
   }
   -> class { "${module_name}::phoenix":
-    version => '1.4.1',
+    version => '1.4.2',
     user    => $user
   }
 
