@@ -38,6 +38,12 @@ PATH
       puppetlabs-apt (>= 1.0.0)
 
 PATH
+  remote: ./our_modules/packages
+  specs:
+    andresgutgon-packages (0.0.1)
+      puppetlabs-apt (>= 1.0.0)
+
+PATH
   remote: ./our_modules/system_information
   specs:
     andresgutgon-system_information (0.1.0)
@@ -56,6 +62,7 @@ DEPENDENCIES
   andresgutgon-bashrc (>= 0)
   andresgutgon-database (>= 0)
   andresgutgon-elixir (>= 0)
+  andresgutgon-packages (>= 0)
   andresgutgon-system_information (>= 0)
   andresgutgon-users (>= 0)
   andresgutgon-utils (>= 0)
