@@ -26,6 +26,6 @@ group :development do
   gem 'bundler', '~> 1.11'
   gem 'byebug'
   gem 'puppet-lint', '2.3.0'
-  gem 'rake', '~> 10.0'
+  gem 'rake', '~> 12.3'
   gem 'rspec', '~> 3.5'
 end
