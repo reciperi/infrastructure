@@ -9,7 +9,7 @@ gem 'capistrano-rake', '~> 0.1.0'
 # PUPPET
 gem 'deep_merge', '1.1.1'
 gem 'facter', '= 2.4.6'
-gem 'puppet', '5.0'
+gem 'puppet', '6.25.1'
 
 # Hiera
 gem 'hiera', '3.4.0'
